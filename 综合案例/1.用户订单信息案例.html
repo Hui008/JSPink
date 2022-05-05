@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    table {
+      margin: 0 auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    table th,
+    td {
+      border: 1px solid #ccc;
+      padding: 5px 3px;
+    }
+    h4 {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h4>订单确认</h4>
+  <script>
+    let goodsName = prompt('请输入商品名称')
+    let goodsPrice = parseInt(prompt('请输入商品价格'))
+    let goodsCount = parseInt(prompt('请输入商品数量'))
+    let goodsTotalPrice = goodsPrice * goodsCount
+    let goodsAddress = prompt('请输入收货地址')
+
+    document.write(`<table>
+                      <tr>
+                        <th>商品名称</th>
+                        <th>商品价格</th>
+                        <th>商品数量</th>
+                        <th>商品总价</th>
+                        <th>收获地址</th>
+                      </tr>
+                      <tr>
+                        <td>${goodsName}</td>
+                        <td>${goodsPrice}</td>
+                        <td>${goodsCount}</td>
+                        <td>${goodsTotalPrice}</td>
+                        <td>${goodsAddress}</td>
+                      </tr>
+                    </table>`)
+  </script>
+</body>
+</html>

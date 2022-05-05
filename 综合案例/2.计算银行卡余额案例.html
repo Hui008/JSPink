@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      margin: 0;
+    }
+    table {
+      margin: 0 auto;
+      /* 去除单元格之间的缝隙 */
+      border-collapse: collapse;
+      text-align: center;
+    }
+    table th,
+    table td {
+      border: 1px solid black;
+      padding: 5px 10px;
+    }
+    caption {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  
+  <script>
+    let tental = +prompt('请输入银行卡余额')
+    let costElectronic = +prompt('请输入本月电费')
+    let costWater = +prompt('请输入本月水费')
+    let costOnline = +prompt('请输入本月网费')
+
+    let balance = tental - costElectronic - costWater - costOnline
+
+    document.write(`
+    <table>
+      <caption><h3>本月消费支出</h3></caption>
+      <tr>
+        <th>银行卡余额</th>
+        <th>水费</th>
+        <th>电费</th> 
+        <th>网费</th>
+        <th>银行卡余额</th>
+      </tr>
+      <tr>
+        <td>${tental}</td>
+        <td>${costElectronic}</td>
+        <td>${costWater}</td>
+        <td>${costOnline}</td>
+        <td>${balance}</td>
+      </tr>
+    </table>
+    `)
+  </script>
+</body>
+</html>
