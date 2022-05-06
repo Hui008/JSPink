@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let balance = 100
+    while (1) {
+      let opration = +prompt(`请选择你的操作
+                        1.存款
+                        2.取款
+                        3.查看余额
+                        4.退出`)
+      if (opration === 4) {
+        alert('已退出')
+        break
+      } else {
+        switch (opration) {
+          case 1:
+            let saveMoney = +prompt('请输入你要存的数额')
+            balance += saveMoney
+            alert(`您现在的余额为${balance}`)
+            break
+          case 2:
+            let drawMoney = +prompt('请输入你要取出的数额')
+            balance -= drawMoney
+            alert(`取出成功,您现在的余额为${balance}`)
+            break
+          case 3:
+            alert(`您现在的余额为${balance}`)
+            break
+          default:
+            alert('请输入正确的选项')
+            break
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

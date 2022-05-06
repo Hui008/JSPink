@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* - 0~100分    奖励法拉利
+    - 80~90分      奖励奥迪
+    - 60~80分      奖励奥拓
+    - 60分以下      打一顿 */
+    let score = +prompt('请输入你的分数')
+    if(score > 90) {
+      alert('奖励法拉利')
+    } else if(score > 80) {
+      alert('奖励奥迪')
+    } else if(score > 60) {
+      alert('奖励奥拓')
+    } else {
+      alert('打一顿')
+    }
+  </script>
+</body>
+</html>

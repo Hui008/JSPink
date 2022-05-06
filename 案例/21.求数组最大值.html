@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 求数组 [2,6,1,77,52,25,7] 中的最大值
+    let arr = [2,6,1,77,52,25,7]
+    let max = -1
+    for(let i = 0; i < arr.length; i++) {
+      max = max > arr[i] ? max : arr[i]
+    }
+    document.write(`数组中的最大值为: ${max}`)
+  </script>
+</body>
+</html>

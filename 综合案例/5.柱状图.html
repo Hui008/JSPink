@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      display: flex;
+      width: 700px;
+      height: 300px;
+      border-left: 1px solid pink;
+      border-bottom: 1px solid pink;
+      margin: 50px auto;
+      justify-content: space-around;
+      align-items: flex-end;
+      text-align: center;
+    }
+
+    .box>div {
+      display: flex;
+      width: 50px;
+      background-color: pink;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .box div span {
+
+      margin-top: -20px;
+    }
+
+    .box div h4 {
+      margin-bottom: -35px;
+      width: 70px;
+      margin-left: -10px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <script>
+    /* let numberOne = +prompt('请输入第一季度销量')
+    let numberTwo = +prompt('请输入第二季度销量')
+    let numberThree = +prompt('请输入第三季度销量')
+    let numberFour = +prompt('请输入第四季度销量')
+
+    document.write(`
+      <div class="box">
+        <div style='height: ${numberOne}px'>
+          <span>${numberOne}</span><h4>第一季度</h4>
+        </div>
+        <div style='height: ${numberTwo}px'>
+          <span>${numberTwo}</span><h4>第一季度</h4>
+        </div>
+        <div style='height: ${numberThree}px'>
+          <span>${numberThree}</span><h4>第一季度</h4>
+        </div>
+        <div style='height: ${numberFour}px'>
+          <span>${numberFour}</span><h4>第一季度</h4>
+        </div>
+      </div>
+    `) */
+    let arr = []
+    for(let i = 0; i < 4; i++) {
+      arr[i] = +prompt(`请输入第${i+1}季度销量`)
+    }
+
+    document.write(`<div class="box">`)
+
+    for(let j = 0; j < arr.length; j++) {
+      document.write(`
+      <div style='height: ${arr[j]}px'>
+          <span>${arr[j]}</span><h4>第${j+1}季度</h4>
+        </div>
+      `)
+    }
+
+    document.write(`</div>`)
+  </script>
+</body>
+
+</html>

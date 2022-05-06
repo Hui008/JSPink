@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 使用for循环 - 求出数组里大于5的和 [4, 9, 5, 20, 3, 11]
+    let arr = [4, 9, 5, 20, 3, 11]
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i] > 5 ? arr[i] : 0
+    }
+    document.write(sum)
+  </script>
+</body>
+
+</html>

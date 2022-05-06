@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中
+    let arr = [0, 2, 4, 5, 6, 12, 0, 23, 345, 0, 0, 0, 233, 3455, 656]
+    let newArr = []
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] !== 0) {
+        newArr.push(arr[i])
+      }
+    }
+    document.write(newArr)
+  </script>
+</body>
+</html>
