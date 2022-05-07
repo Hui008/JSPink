@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let timeChange = function() {
+      let timer = +prompt('请输入秒数')
+
+      let h = parseInt(timer / 60 / 60 )
+      let m = parseInt(timer / 60 % 60)
+      let s = parseInt(timer % 60)
+
+      h = h > 9 ? h : '0' + h
+      m = m > 9 ? m : '0' + m
+      s = s > 9 ? s : '0' + s
+
+      return [timer, h, m, s]
+    }
+    let timeArr = timeChange()
+    document.write(`${timeArr[0]}秒转换成时分秒为:${timeArr[1]}时,${timeArr[2]}分,${timeArr[3]}秒`)
+  </script>
+</body>
+</html>

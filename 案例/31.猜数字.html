@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getRandom(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    }
+    let result = getRandom(1, 100)
+    while(1) {
+      let guessNumber = +prompt('请输入猜的数字')
+      if(guessNumber > result) {
+        alert('你猜的数大了')
+      } else if(guessNumber < result) {
+        alert('你猜的数小了')
+      } else {
+        alert('恭喜你,猜对了')
+        break
+      }
+    }
+  </script>
+</body>
+</html>

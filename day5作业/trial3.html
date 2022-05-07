@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 1. 对象声明完毕后, 调用对象中的吃饭的方法
+    2. 提示: 对象中的方法本质是函数, 调用需要加()
+    3. 方法也可以传递参数的 */
+    let per = {
+      sex: '男',
+      age: 20,
+      hobby: '睡觉',
+      saying: function(x) {
+        console.log(x);
+      },
+      eat: function() {
+        console.log('吃饭');
+      }
+    }
+    for(k in per) {
+      console.log(per[k])
+    }
+    per.saying('哈哈哈哈')
+    per.eat()
+  </script>
+</body>
+</html>

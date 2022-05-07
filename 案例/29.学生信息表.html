@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    table th {
+      background-color: rgba(0, 0, 0, .2);
+    }
+    table th,
+    td {
+      border: 1px solid black;
+      padding: 5px 20px;
+      text-align: center;
+    }
+    caption {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  
+  </table>
+  <script>
+
+    let students = [
+      {name: '小明', age: 18, gender: '男', hometown: '河北省'},
+      {name: '小红', age: 19, gender: '女', hometown: '河南省'},
+      {name: '小刚', age: 17, gender: '男', hometown: '山西省'},
+      {name: '小丽', age: 18, gender: '女', hometown: '山东省'}
+    ]
+
+    document.write(`<table>
+    <caption>学生列表</caption>
+    <tr>
+      <th>序号</th>
+      <th>姓名</th>
+      <th>年龄</th>
+      <th>性别</th>
+      <th>家乡</th>
+    </tr>`)
+
+    for(let i = 0; i < students.length; i++) {
+      document.write(`<tr>
+        <td>${i+1}</td>`)
+      for(k in students[i]) {
+        document.write(`<td>${students[i][k]}</td>`)
+      }
+    }
+    document.write(`</table>`)
+  </script>
+</body>
+</html>

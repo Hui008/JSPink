@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let goods = {
+      name: '小米10',
+      num: 12,
+      weight: '0.55kg',
+      address: '中国大陆',
+      sayHi: function() {
+        console.log('O my god  我是小米啊')
+      },
+      saying: function(s) {
+        console.log(s);
+      }
+    }
+
+    document.write(`${goods.name}<br>`)
+    document.write(goods['weight'])
+    goods.sayHi()
+    goods.saying('谁tm买小米')
+  </script>
+</body>
+</html>

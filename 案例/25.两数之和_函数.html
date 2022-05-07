@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function getSum() {
+      let num1 = +prompt('第一个数')
+      let num2 = +prompt('第二个数')
+
+      document.write(`${num1+num2}<br>`)
+    }
+    getSum()
+
+    function getSumFn(num) {
+      let sum = 0
+
+      for(let i = 0; i <= num; i++) {
+        sum += i
+      }
+      document.write(sum)
+    }
+    let num = +prompt('请输入一个数')
+    getSumFn(num)
+  </script>
+</body>
+</html>

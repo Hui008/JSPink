@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 实现两个数的值交换(函数版本)  
+
+    目的: 封装函数, 复习函数的基本写法
+
+    要求:
+
+    1. 函数名为 changeNum()
+    2. 调用函数时,在控制台输出a=1,b=2
+    3. 经过函数内部处理后,输出a=2,b=1
+    4. console.log的代码全部封装在函数内部
+    5. 准备代码如下, 在此基础上继续编写
+    6. 可以多调用两次 */
+
+    let changeNum = function(a, b) {
+      console.log(`变化前：a=${a},b=${b}`)
+
+      let temp = a
+      a = b
+      b = temp
+      console.log(`变化后：a=${a},b=${b}`)
+    }
+    changeNum(1,2)
+    changeNum('pink', 'red')
+  </script>
+</body>
+</html>

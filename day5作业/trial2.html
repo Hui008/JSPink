@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 1. 声明一个变量per, 类型为对象类型
+    2. 该对象的属性为性别,年龄,爱好(3个)
+    3. 该对象的方法有 说话, 吃饭(2个)
+    4. 在控制台分别调用该对象的属性和方法 */
+    let per = {
+      sex: '男',
+      age: 20,
+      hobby: '睡觉',
+      saying: function() {
+        console.log('哈哈哈哈哈');
+      },
+      eat: function() {
+        console.log('吃饭');
+      }
+    }
+    for(k in per) {
+      console.log(per[k])
+    }
+    per.saying()
+    per.eat()
+  </script>
+</body>
+</html>

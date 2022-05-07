@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 1. 封装函数, 名字为sum
+    2. 功能: 根据传入的两个数,求和并且返回求和的结果（函数必须有return返回值）
+    3. 测试: 调用该函数时获取结果后在控制台打印结果判断是否正确 */
+
+    function sum(x, y) {
+      x = x || 0
+      y = y || 0
+
+      return x + y
+    }
+
+    let getSum = sum(10, 20)
+    document.write(getSum)
+  </script>
+</body>
+</html>
