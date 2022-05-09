@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      color: aliceblue;
+    }
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+    .box3 {
+      width: 200px;
+      height: 200px;
+      background-color: black;
+    }
+    .box4 {
+      color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <img src="./images/1.webp" alt="">
+  <div class="box1">box1</div>
+  <div class="box2">box2</div>
+  <input type="text" value="哈哈哈哈哈">
+
+  <script>
+    let pic = document.querySelector('img')
+    let box1 = document.querySelector('.box1')
+    let box2 = document.querySelector('.box2')
+    let input = document.querySelector('input')
+
+    pic.src = './images/3.webp'
+
+    box1.style.backgroundColor = 'red'
+
+    box2.className = 'box3'
+    box2.classList.add('box4')
+
+    input.type = 'password'
+  </script>
+</body>
+</html>

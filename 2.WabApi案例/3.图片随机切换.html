@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="../2.WebApi/images/1.webp" alt="">
+
+  <script>
+    let pic = document.querySelector('img')
+    
+    function getRandom(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    }
+    let i = getRandom(1,6)
+
+    pic.src = `../2.WebApi/images/${i}.webp`
+  </script>
+</body>
+</html>

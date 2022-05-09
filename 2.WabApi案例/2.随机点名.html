@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 80px;
+      height: 30px;
+      border: 1px solid pink;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+
+  <script>
+    let div = document.querySelector('div')
+    
+    let arr = ['张三','李四','王五','刘六']
+    function getRandom(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    }
+
+    let i = getRandom(0, arr.length-1)
+    div.innerText = `${arr[i]}`
+  </script>
+</body>
+</html>

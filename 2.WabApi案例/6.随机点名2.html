@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  p {
+    width: 150px;
+    height: 30px;
+    border: 1px solid pink;
+    text-align: center;
+    line-height: 30px;
+  }
+</style>
+<body>
+  <div>
+    <p></p>
+    <button>点击随机点名</button>
+  </div>
+
+  <script>
+    let p = document.querySelector('p')
+    let btn = document.querySelector('button')
+
+    let arr = ['张三','李四','王五','刘六']
+    function getRandom(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+    }
+
+    btn.addEventListener('click', function() { 
+      let i = getRandom(0, arr.length-1)
+      p.innerHTML = `${arr[i]}`
+      arr.splice(i,1)
+      if(arr.length === 0) {
+        alert('已经点了所有人的名了')
+        btn.disabled = false
+      }
+    })
+  </script>
+</body>
+</html>
