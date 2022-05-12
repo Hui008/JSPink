@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    div {
+      width: 500px;
+      height: 500px;
+      margin: 50px auto;
+      box-sizing: border-box;
+    }
+    input {
+      width: 150px;
+      height: 30px;
+      line-height: 50px;
+      padding-left: 20px;
+      box-sizing: border-box;
+      border: 1px solid #e0e0e0;
+      overflow: hidden;
+    }
+    .mi .search {
+      border: 1px solid #ff6700 !important;
+    }
+    ul {
+      display: none;
+      height: 180px;
+      width: 150px;
+      list-style: none;
+      
+      padding-top: 5px;
+      border: 1px solid rgb(132, 179, 75);
+      border-top: 0;
+      box-sizing: border-box;
+    }
+    li {
+      font-size: 10px;
+      height: 25px;
+      line-height: 25px;
+      padding-left: 20px;
+    }
+    li:hover {
+      background-color: #ccc;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="mi">
+    <input type="search" placeholder="小米笔记本">
+    <ul>
+      <li>全部商品</li>
+      <li>小米13</li>
+      <li>小米12</li>
+      <li>小米11</li>
+      <li>小米10</li>
+    </ul>
+  </div>
+
+  <script>
+    let ipu = document.querySelector('input')
+    let ul = document.querySelector('ul')
+
+    ipu.addEventListener('focus',function() {
+      ul.style.display = 'block'
+      this.classList.add('search')
+    })
+    ipu.addEventListener('blur',function() {
+      ul.style.display = 'none'
+      this.classList.remove('search')
+
+    })
+  </script>
+</body>
+</html>

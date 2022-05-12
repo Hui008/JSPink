@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 250px;
+      height: 30px;
+      border: 1px solid pink;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <button>获取时间</button>
+  <script>
+    let div = document.querySelector('div')
+    let btn = document.querySelector('button')
+
+    function getTimer() {
+      let date = new Date()
+      let str = ''
+
+      let year = date.getFullYear()
+      let month = date.getMonth() + 1
+      let day = date.getDate()
+
+      let hour = date.getHours()
+      let minute = date.getMinutes()
+      let second = date.getSeconds()
+
+      let xq = date.getDay()
+
+      str = `${year}--${month > 9 ? month : '0' + month}--${day > 9 ? day : '0' + day} ${hour > 9 ? hour : '0' + hour}:${minute > 9 ? minute : '0' + minute}:${second > 9 ? second : '0' + second} 星期${xq}`
+      div.innerHTML = str
+    }
+
+    btn.addEventListener('click', getTimer)
+  </script>
+</body>
+</html>

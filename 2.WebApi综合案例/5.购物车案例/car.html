@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>购物车全选功能</title>
+  <!-- 引入初始化 -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #666;
+    }
+
+    body {
+      background: #fff;
+      color: #666;
+      font-size: 14px;
+    }
+
+    input {
+      outline: none;
+    }
+
+    .clearfix::before,
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .clearfix {
+      *zoom: 1;
+    }
+  </style>
+  <!-- 引入购物车样式 -->
+  <style>
+    table {
+      width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+
+    th {
+      font: normal 14px/50px '宋体';
+      color: #666;
+    }
+
+    th,
+    td {
+      border: none;
+      text-align: center;
+      border-bottom: 1px dashed #ccc;
+    }
+
+    input[type='checkbox'] {
+      width: 13px;
+      height: 13px;
+    }
+
+    tbody p {
+      position: relative;
+      bottom: 10px;
+    }
+
+    tbody .add,
+    tbody .reduce {
+      float: left;
+      width: 22px;
+      height: 22px;
+      border: 1px solid #ccc;
+      text-align: center;
+      background: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    tbody input[type='text'] {
+      width: 50px;
+      float: left;
+      height: 18px;
+      text-align: center;
+    }
+
+    tbody .count-c {
+      width: 98px;
+      margin: 0 auto;
+    }
+
+    button[disabled] {
+      color: #ddd;
+      cursor: not-allowed;
+    }
+
+    tbody tr:hover {
+      background: #eee;
+    }
+
+    tbody tr.active {
+      background: rgba(241, 209, 149, 0.945);
+    }
+
+    .controls {
+      width: 790px;
+      margin: 10px auto;
+      border: 1px solid #ccc;
+      line-height: 50px;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    .controls .del-all,
+    .controls .clear {
+      float: left;
+      margin-right: 50px;
+    }
+
+    .controls p {
+      float: right;
+      margin-right: 100px;
+    }
+
+    .controls span {
+      color: red;
+    }
+
+    .controls .pay {
+      position: absolute;
+      right: 0;
+      width: 80px;
+      height: 54px;
+      background: red;
+      font: bold 20px/54px '宋体';
+      color: #fff;
+      text-align: center;
+      bottom: -1px;
+    }
+
+    .controls .total-price {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="car">
+    <table>
+      <thead>
+        <tr>
+          <th><input type="checkbox" id="all" />全选</th>
+          <th>商品</th>
+          <th>单价</th>
+          <th>商品数量</th>
+          <th>小计</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody id="carBody">
+        <tr>
+          <td>
+            <input class="s_ck" type="checkbox" readonly />
+          </td>
+          <td>
+            <img src="./images/01.jpg" />
+            <p>牛奶</p>
+          </td>
+          <td class="price">5￥</td>
+          <td>
+            <div class="count-c clearfix">
+              <button class="reduce" disabled>-</button>
+              <input type="text" value="1" />
+              <button class="add">+</button>
+            </div>
+          </td>
+          <td class="total">5￥</td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="s_ck" type="checkbox" />
+          </td>
+          <td>
+            <img src="./images/01.jpg" />
+            <p>牛奶</p>
+          </td>
+          <td class="price">10￥</td>
+          <td>
+            <div class="count-c clearfix">
+              <button class="reduce" disabled>-</button>
+              <input type="text" value="1" />
+              <button class="add">+</button>
+            </div>
+          </td>
+          <td class="total">10￥</td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="s_ck" type="checkbox" />
+          </td>
+          <td>
+            <img src="./images/01.jpg" />
+            <p>牛奶</p>
+          </td>
+          <td class="price">20￥</td>
+          <td>
+            <div class="count-c clearfix">
+              <button class="reduce" disabled>-</button>
+              <input type="text" value="1" />
+              <button class="add">+</button>
+            </div>
+          </td>
+          <td class="total">20￥</td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input class="s_ck" type="checkbox" />
+          </td>
+          <td>
+            <img src="./images/01.jpg" />
+            <p>牛奶</p>
+          </td>
+          <td class="price">35￥</td>
+          <td>
+            <div class="count-c clearfix">
+              <button class="reduce" disabled>-</button>
+              <input type="text" value="1" />
+              <button class="add">+</button>
+            </div>
+          </td>
+          <td class="total">35￥</td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="controls clearfix">
+      <a href="javascript:" class="del-all">删除所选商品</a>
+      <a href="javascript:" class="clear">清理购物车</a>
+      <a href="javascript:" class="pay">去结算</a>
+      <p>
+        已经选中<span id="totalCount">0</span>件商品;总价：<span id="totalPrice" class="total-price">0￥</span>
+      </p>
+    </div>
+  </div>
+  <script>
+    let checkAll = document.querySelector('#all')
+    let scks = document.querySelectorAll('input.s_ck')
+    let adds = document.querySelectorAll('.add')
+    let reduces = document.querySelectorAll('.reduce')
+    let count = document.querySelectorAll('.count-c input')
+    let totalCount = document.querySelector('#totalCount')
+    let dels = document.querySelectorAll('.del')
+    let carBody = document.querySelector('#carBody')
+    let delAll = document.querySelector('.del-all')
+    let totalResult = document.querySelector('.total-price')
+    let totals = document.querySelectorAll('.total')
+    let prices = document.querySelectorAll('.price')
+    let totalPrice = document.querySelector('#totalPrice')
+
+    let flag = true
+    // 全选商品
+    checkAll.addEventListener('click', function() {
+      for(let i = 0; i < scks.length; i++) {
+        scks[i].checked = flag
+      }
+      totalCount.innerHTML = `${flag === true ? carBody.children.length : 0}`
+      flag = !flag
+
+      result()
+    })
+
+    for(let i = 0; i < scks.length; i++) {
+      // 判断是商品是否全选
+      scks[i].onclick = function() {
+        let shopCount = 0
+        for(let j = 0; j < scks.length; j++) {
+          if(scks[j].checked === true) {
+            shopCount++
+          }
+          flag = shopCount === scks.length ?  false : true
+          checkAll.checked = !flag
+          totalCount.innerHTML = `${shopCount}`
+        }
+
+        result()
+      }
+      // 添加商品数量
+      adds[i].addEventListener('click', function() {
+        count[i].value++
+        reduces[i].disabled = false
+        totals[i].innerHTML = `${count[i].value * parseInt(prices[i].innerHTML)}￥`
+
+        result()
+      })
+      // 减少商品数量
+      reduces[i].addEventListener('click', function() {
+        if(count[i].value <= 1) {
+          reduces[i].disabled = true
+          alert('最少为一件O')
+          return
+        }
+        reduces[i].disabled = false
+        count[i].value--        
+        totals[i].innerHTML = `${count[i].value * parseInt(prices[i].innerHTML)}￥`
+
+        result()
+      })
+      // 删除单个商品
+      dels[i].addEventListener('click', function() {
+        carBody.removeChild(carBody.children[i])
+
+        result()
+      })
+    
+    }
+
+    // 删除所选商品
+    delAll.addEventListener('click', function() {
+      let str = []
+        for(let i = 0; i < carBody.children.length; i++) {
+          if(scks[i].checked === true) {
+            str.push(i)
+          }
+        }
+        for(let j = str.length - 1; j >= 0; j--) {
+          carBody.removeChild(carBody.children[str[j]])
+        }     
+
+        result()
+      })
+
+      function result() {
+        let sum = 0
+        console.log(carBody.children);
+        for(let i = 0; i < carBody.children.length; i++) {
+          if(totals[i].parentNode.children[0].children[0].checked === true) {
+            sum += parseInt(totals[i].innerHTML)
+          }
+        }
+        totalPrice.innerHTML = `${sum}￥`
+      }
+      result()
+  </script>
+</body>
+
+</html>
