@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 字符串中包含哈
+    console.log(/哈/.test('二哈')); // true
+    // 以哈为开头
+    console.log(/^哈/.test('二哈')); // false
+    // 以哈为结尾
+    console.log(/哈$/.test('二哈')); // true
+    // 精确匹配 
+    console.log(/^哈$/.test('哈哈')); // false
+    console.log(/^哈$/.test('哈')); // true
+  </script>
+</body>
+</html>

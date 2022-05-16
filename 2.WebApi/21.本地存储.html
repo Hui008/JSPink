@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <button>删除</button>
+  <script>
+    let div = document.querySelector('div')
+    let btn = document.querySelector('button')
+    // 存储数据
+    localStorage.setItem('uname', '张三')
+
+    // 获取数据
+    div.innerHTML = localStorage.getItem('uname')
+
+    // 删除数据
+    btn.addEventListener('click', function() {
+      localStorage.removeItem('uname')
+    })
+
+    let obj = {
+      uname  : '刘德华',
+      age: 18,
+      sex : '男'
+    }
+    console.log(obj);
+    let objStr = JSON.stringify(obj)
+    localStorage.setItem('objStr', objStr)
+
+
+    let arr = [{1:1, 2:22}, {3:33,4:44}]
+    localStorage.setItem('data',JSON.stringify(arr))
+    console.log(JSON.parse(localStorage.getItem('data')));
+
+  </script>
+</body>
+</html>

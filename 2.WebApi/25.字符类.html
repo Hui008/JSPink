@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(/[abc]/.test('')); // false
+    console.log(/[abc]/.test('abdy')); // true
+    console.log(/[abc]/.test('node')); // false
+
+    console.log('--------------');
+    console.log(/^[abc]$/.test('a')); //true
+    console.log(/^[abc]$/.test('abc')); //false
+    console.log(/^[abc]$/.test('aa')); // false
+
+    console.log('----------');
+    console.log(/^[a-zA-Z]$/.test('d')); // true
+    console.log(/^[a-zA-Z]$/.test('D')); // true
+    console.log(/^[a-zA-Z]$/.test('DD')); // false
+    console.log(/^[a-zA-Z0-9-_]$/.test('6')); // true
+  </script>
+</body>
+</html>

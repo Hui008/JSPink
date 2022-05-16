@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      float: left;
+    }
+    span {
+      float: left;
+    }
+    .error {
+      display: none;
+      color: red;
+    }
+    .right {
+      display: none;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <span class="error">你输入的内容不合法,只能输入数字</span>
+  <span class="right">你输入的内容合法</span>
+
+  <script>
+    let inp = document.querySelector('input')
+    let error = document.querySelector('.error')
+    let right = document.querySelector('.right')
+    
+    inp.addEventListener('blur', function() {
+      let re = /^[0-9]+$/.test(inp.value)
+
+      if(re === true) {
+        error.style.display = 'none'
+        right.style.display = 'block'
+      } else {
+        right.style.display = 'none'
+        error.style.display = 'block'
+      }
+    })
+  </script>
+</body>
+</html>
