@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <script>
+    let arr1 = [1, 2, 3]
+    let arr2 = [4, 5, 6]
+    let arr3 = [...arr1, ...arr2]
+    console.log(arr3); //  [1, 2, 3, 4, 5, 6]
+
+    arr1.push(...arr2)
+    console.log(arr1); //  [1, 2, 3, 4, 5, 6]
+
+    let divs = document.querySelectorAll('div')
+    console.log(divs); // NodeList(3) [div, div, div]
+
+    let arr = [...divs]
+    console.log(arr); // [div, div, div]
+
+    let arrayLike = {
+      '0': '张三',
+      '1': '李四',
+      '2': '王五',
+      '3': '刘六',
+      length: 4
+    }
+    let newArr = Array.from(arrayLike)
+    console.log(newArr); // ['张三', '李四', '王五', '刘六']
+
+    let arrayLike2 = {
+      '0': 1,
+      '1': 2,
+      length: 2
+    }
+    let newArr2 = Array.from(arrayLike2, item => item * 2)
+    console.log(newArr2); // [2, 4]
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = [1,2,3]
+    let [a, b, c, d] = arr
+    console.log(a); // 1
+    console.log(b); // 2
+    console.log(c); // 3 
+    // console.log(d); // undefined
+
+    let person = {name: '张三', age: 20}
+
+    let {name, age, sex} = person
+    console.log(name); // 张三
+    console.log(age); // 20
+    console.log(sex); // undefined
+
+    let {name: uname, age: uage} = person
+    console.log(uname); // 张三
+    console.log(uage); // 20
+  </script>
+</body>
+</html>

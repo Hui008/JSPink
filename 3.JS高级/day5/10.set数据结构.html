@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let s1 = new Set()
+
+    s1.add(1)
+    s1.add(2)
+    console.log(s1); // Set(2) {1, 2}
+    s1.delete(2)
+    console.log(s1); // Set(1) {1}
+    let re = s1.has(1)
+    console.log(re); // true
+    s1.clear()
+    console.log(s1); // Set(0) {size: 0}
+  </script>
+</body>
+</html>

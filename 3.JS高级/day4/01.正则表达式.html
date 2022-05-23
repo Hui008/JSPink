@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1. 利用 RegExp 对象来创建
+    let regexp = new RegExp(/123/)
+    console.log(regexp);
+
+    // 2. 利用字面量来创建
+    let str1 = '123'
+    let str2 = 'a123aa'
+    let rg = /123/
+    console.log(rg);
+    console.log(rg.test(str1));  // true
+    console.log(rg.test(str2));  // false
+
+    let reg = /^[a]{,5}$/
+
+    console.log(reg.test('aaaaa'));
+  </script>
+</body>
+</html>

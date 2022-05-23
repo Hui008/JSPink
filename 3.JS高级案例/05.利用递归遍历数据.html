@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let data = [{
+      id: 1,
+      name: '家电',
+      goods: [{
+        id: 11,
+        gname:'冰箱'
+      },{
+        id:12,
+        gname:'洗衣机'
+      }]
+    }, {
+      id:2,
+      name:'服饰'
+    }]
+
+    function fn(data, id) {
+      data.forEach(function(item) {
+        if(item.id == id) {
+          console.log(item);
+        } else if(item.goods && item.goods.length > 0) [
+            fn(item.goods, id)
+        ]
+      })
+    } 
+
+    fn(data, 11)
+  </script>
+</body>
+</html>

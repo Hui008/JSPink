@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .error {
+      color: red;
+    }
+    .right {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <span>请输入用户名</span>
+
+  <script>
+    let reg = /^[a-zA-Z0-9-_]{3,16}$/
+
+    let inp = document.querySelector('input')
+    let span = document.querySelector('span')
+
+    inp.addEventListener('blur', function() {
+      if(reg.test(inp.value)) {
+        span.className = 'right'
+        span.innerHTML = '输入格式正确'
+      }else {
+        span.className = 'error'
+        span.innerHTML = '输入格式错误'
+      }
+    })
+  </script>
+</body>
+</html>

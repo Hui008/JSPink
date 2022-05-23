@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 800px;
+      height: 400px;
+      margin: 100px auto;
+    }
+    input {
+      width: 60px;
+      margin: 0 10px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      margin-left: 50px;
+    }
+    td {
+      border: 2px solid #ccc;
+      text-align: center;
+    }
+    #id {
+      width: 80px;
+    }
+    #goodsName {
+      width: 200px;
+    }
+    #price {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    按照价格查询：<input type="number" id="min">-
+    <input type="number" id="max"><button>搜索</button>
+    按照商品名称查询 <input type="text" id="search"><button>查询</button>
+
+    <table>
+      <thead>
+        <tr>
+          <td id="id">id</td>
+          <td id="goodsName">产品名称</td>
+          <td id="price">价格</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let data = [{
+            id: 1,
+            pname: '小米',
+            price: 3999
+        }, {
+            id: 2,
+            pname: 'oppo',
+            price: 999
+        }, {
+            id: 3,
+            pname: '荣耀',
+            price: 1299
+        }, {
+            id: 4,
+            pname: '华为',
+            price: 1999
+        }, ];
+
+    let tbody = document.querySelector('tbody')
+
+    function xr(myData) {
+      tbody.innerHTML = ''
+      myData.forEach(function(value){ 
+        let tr = document.createElement('tr')
+        tr.innerHTML = `<td>${value.id}</td> <td>${value.pname}</td> <td>${value.price}</td>`
+
+        tbody.appendChild(tr)
+      })
+    }
+    xr(data)
+
+    let min = document.querySelector('#min')
+    let max = document.querySelector('#max')
+
+    let btns = document.querySelectorAll('button')
+
+    btns[0].addEventListener('click', function() {
+      let newData = data.filter(function(value) {
+        return value.price >= min.value && value.price <= max.value
+      })
+      xr(newData)
+    })
+
+    let search = document.querySelector('#search')
+    btns[1].addEventListener('click', function() {
+      let newArr = []
+      data.some(function(value){
+        if(value.pname === search.value) {
+          newArr.push(value)
+          return true
+        }
+      })
+      xr(newArr)
+    })
+  </script>
+</body>
+</html>

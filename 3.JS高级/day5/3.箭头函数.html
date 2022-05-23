@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function sum(num1, num2) {
+      return num1 + num2
+    }
+
+    console.log(sum(1, 2)); // 3
+
+    const re = (num1, num2) => num1 + num2 // 5
+    console.log(re(2, 3))
+
+    let obj = {name: '张三', age: 20}
+    function fn() {
+      console.log(this); // {name: '张三', age: 20}
+      return () => {
+        console.log(this); // {name: '张三', age: 20}
+      }
+    }
+    const resFn = fn.call(obj)
+    resFn()
+
+
+    console.log('-----------');
+    let obj2 = {
+      age: 20,
+      say: ()=>{
+        console.log(this.age); // undefind
+      }
+    }
+    obj2.say()
+  </script>
+</body>
+</html>

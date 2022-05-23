@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = {
+      id: 1,
+      name: 'andy',
+      msg: {
+        sex : '男',
+        age: 18
+      },
+      color: ['pink', 'red', 'black']
+    }
+
+    // 浅拷贝
+    /* let o = {}
+    for(let k in obj) {
+      o[k] = obj[k]
+    }
+    console.log(o);
+    o.msg.sex = '女'
+    console.log(o); */
+
+   let o = {}
+   Object.assign(o, obj)
+   o.sex = '女'
+   console.log(o);
+
+    // 深拷贝
+    let o2 = {}
+    function deepCopy(newObj, oldObj) {
+      for(let k in oldObj) {
+        let item = oldObj[k]
+        if(oldObj[k] instanceof Array) {
+          newObj[k] = []
+          deepCopy(newObj[k], item)
+        } else if(item instanceof Object) {
+          newObj[k] = {}
+          deepCopy(newObj[k], item)
+        } else {
+          newObj[k] = item
+        }
+      }
+    }
+
+    deepCopy(o2, obj)
+    o2.age = 20
+    console.log(o2);
+  </script>
+</body>
+</html>

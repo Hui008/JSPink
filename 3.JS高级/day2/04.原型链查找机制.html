@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Star(uname, age) {
+      this.uname = uname
+      this.age = age
+    }
+
+    let ldh = new Star('刘德华',20)
+
+    console.log(ldh.sex); // null
+
+    Object.prototype.sex = '女'
+    Star.prototype.sex = '男'
+
+    console.log(ldh.sex); // 男
+
+    Object.prototype.address = 'China'
+
+    console.log(ldh.address); // China
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // let distance = +prompt('请输入距离：')
+
+    // let YN = prompt('请输入是否堵车: Y/N')
+
+    // let price = 0
+
+    // price += distance > 3 ? 13 + parseInt(distance-3)*5 : 13
+
+    // price += YN === 'Y' ? 10 : 0 
+
+
+    // alert(`你需要支付${price}`)
+
+
+    let car = (function() {
+      let start = 13
+      let total = 0
+      return {
+        price: function(n) {
+          total += n > 3 ? start + parseInt((n - 3) % 1 === 0 ? (n - 3) : (n-2)) * 5 : start
+
+          return total
+        },
+
+        yd: function(flag) {
+          total += flag === 'yes' ? 10 : 0
+
+          return total
+        }
+      }
+    })()
+    console.log(car.price(5));
+    console.log(car.yd('yes'));
+  </script>
+</body>
+</html>
